@@ -9,7 +9,7 @@
                 <h2 class="text-2xl font-bold text-gray-800">
                     Liste des catégories
                 </h2>
-                <a href="ajout-categorie.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                <a href="ajout-categorie.php" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                     + Ajouter une catégorie
                 </a>
             </div>
@@ -32,7 +32,7 @@
                             <td class="px-6 py-4 text-sm text-gray-500"><?= $categorie['description'] ?></td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= getNbArticleForCategorie($categorie['id']) ?></td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
-                                <a href="articles-categorie.html?categorie=mobilier" class="text-blue-600 hover:text-blue-900">Détail</a>
+                                <a href="articles-categorie.php?id=<?= $categorie['id'] ?>" class="text-blue-600 hover:text-blue-900">Détail</a>
                             </td>
                         </tr>
                         <?php endforeach ?>

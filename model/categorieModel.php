@@ -21,17 +21,6 @@ function getCategorieByLibelle($libelle) {
     return null;
 }
 
-function searchCategories($keyword) {
-    $result = [];
-    foreach ($_SESSION['categories'] as $categorie) {
-        if (stripos($categorie['libelle'], $keyword) !== false || 
-            stripos($categorie['description'], $keyword) !== false) {
-            $result[] = $categorie;
-        }
-    }
-    return $result;
-}
-
 function newCategorieId() {
     $maxId = 0;
     foreach ($_SESSION['categories'] as $categorie) {
@@ -73,59 +62,11 @@ function getNbArticleForCategorie($id){
     return $count;
 }
 
-function getCategoriesWithArticleCount($articles = null) {
-    if ($articles === null) {
-        $articles = $_SESSION['articles'] ?? [];
-    }
-    
+function getArticlesByCategorie($categorie_id) {
     $result = [];
-    foreach ($_SESSION['categories'] as $categorie) {
-        $count = 0;
-        foreach ($articles as $article) {
-            if ($article['categorie_id'] == $categorie['id']) {
-                $count++;
-            }
-        }
-        
-        $result[] = [
-            'id' => $categorie['id'],
-            'libelle' => $categorie['libelle'],
-            'description' => $categorie['description'],
-            'nb_articles' => $count
-        ];
-    }
-    return $result;
-}
-
-function getNonEmptyCategories() {
-    $result = [];
-    foreach ($_SESSION['categories'] as $categorie) {
-        $nbArticles = 0;
-        foreach ($_SESSION['articles'] as $article) {
-            if ($article['categorie_id'] == $categorie['id']) {
-                $nbArticles++;
-                break;
-            }
-        }
-        if ($nbArticles > 0) {
-            $result[] = $categorie;
-        }
-    }
-    return $result;
-}
-
-function getEmptyCategories() {
-    $result = [];
-    foreach ($_SESSION['categories'] as $categorie) {
-        $hasArticle = false;
-        foreach ($_SESSION['articles'] as $article) {
-            if ($article['categorie_id'] == $categorie['id']) {
-                $hasArticle = true;
-                break;
-            }
-        }
-        if (!$hasArticle) {
-            $result[] = $categorie;
+    foreach ($_SESSION['articles'] as $article) {
+        if ($article['categorie_id'] == $categorie_id) {
+            $result[] = $article;
         }
     }
     return $result;
