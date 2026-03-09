@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../other/allModel.php';
+    require_once __DIR__ . '/../other/allController.php';
     require_once __DIR__ . '/../other/header.php';
 ?>
     <!-- Contenu principal -->
@@ -31,14 +31,14 @@
                 <!-- Catégorie -->
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Catégorie</label>
-                    <select name="categorie_id" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <option value="">Sélectionnez une catégorie</option>
-        <?php foreach ($categories as $categorie): ?>
-            <option value="<?= $categorie['id'] ?>">
-                <?= htmlspecialchars($categorie['libelle']) ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
+                        <select name="categorie_id" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Sélectionnez une catégorie</option>
+                            <?php foreach ($categories as $categorie): ?>
+                                <option value="<?= $categorie['id'] ?>">
+                                    <?= htmlspecialchars($categorie['libelle']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                 </div>
 
                 <!-- Boutons -->
@@ -46,7 +46,7 @@
                     <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
                         Ajouter
                     </button>
-                    <a href="index.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition text-center">
+                    <a href="article.html" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition text-center">
                         Annuler
                     </a>
                 </div>
