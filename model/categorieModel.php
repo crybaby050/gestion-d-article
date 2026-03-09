@@ -59,29 +59,18 @@ function addCategorie($libelle, $description) {
     return $nouvelleCategorie;
 }
 
-function updateCategorie($id, $libelle, $description) {
-    foreach ($_SESSION['categories'] as &$categorie) {
-        if ($categorie['id'] == $id) {
-            $categorie['libelle'] = $libelle;
-            $categorie['description'] = $description;
-            return true;
-        }
-    }
-    return false;
-}
-
-function updateCategorieDescription($id, $nouvelleDescription) {
-    foreach ($_SESSION['categories'] as &$categorie) {
-        if ($categorie['id'] == $id) {
-            $categorie['description'] = $nouvelleDescription;
-            return true;
-        }
-    }
-    return false;
-}
-
 function countTotalCategories() {
     return count($_SESSION['categories']);
+}
+
+function getNbArticleForCategorie($id){
+    $count = 0;
+    foreach($_SESSION['articles'] as $article){
+        if($article['categorie_id'] == $id){
+            $count = $count + 1;
+        }
+    }
+    return $count;
 }
 
 function getCategoriesWithArticleCount($articles = null) {

@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../other/allModel.php';
+    require_once __DIR__ . '/../other/allController.php';
     require_once __DIR__ . '/../other/header.php';
 ?>
     <!-- Contenu principal -->
@@ -26,42 +26,16 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
+                        <?php foreach($categories as $categorie): ?>
                         <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Informatique</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">Ordinateurs, smartphones et accessoires</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
-                                <a href="articles-categorie.html?categorie=informatique" class="text-blue-600 hover:text-blue-900">Détail</a>
-                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Mobilier</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">Meubles de bureau et chaises</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?= $categorie['libelle'] ?></td>
+                            <td class="px-6 py-4 text-sm text-gray-500"><?= $categorie['description'] ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= getNbArticleForCategorie($categorie['id']) ?></td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
                                 <a href="articles-categorie.html?categorie=mobilier" class="text-blue-600 hover:text-blue-900">Détail</a>
-                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Fournitures</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">Fournitures de bureau et papeterie</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
-                                <a href="articles-categorie.html?categorie=fournitures" class="text-blue-600 hover:text-blue-900">Détail</a>
-                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Électronique</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">Appareils électroniques divers</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-3">
-                                <a href="articles-categorie.html?categorie=electronique" class="text-blue-600 hover:text-blue-900">Détail</a>
-                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
-                            </td>
-                        </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
