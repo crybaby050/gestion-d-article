@@ -36,7 +36,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?= $article['libelle'] ?></td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= $article['prix'] ?></td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= $article['quantite'] ?></td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"><?= $article['categorie_id'] ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"><?= getNameCategorieById($article['categorie_id']) ?></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -51,7 +51,7 @@
                     <h3 class="font-semibold text-lg mb-2"><?= $article['libelle'] ?></h3>
                     <p class="text-gray-600 mb-1">Prix: <?= $article['prix'] ?> FCFA</p>
                     <p class="text-gray-600 mb-1">Quantité: <?= $article['quantite'] ?></p>
-                    <p class="text-gray-600 mb-3">Catégorie: <?= $article['categorie_id'] ?></p>
+                    <p class="text-gray-600 mb-3">Catégorie: <?= getNameCategorieById($article['categorie_id']) ?></p>
                 </div>
                 <?php endforeach ?>
             </div>
