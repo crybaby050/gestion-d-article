@@ -1,4 +1,4 @@
 <?php
-require_once __DIR__ . '/allModel.php';
-require_once __DIR__ . '/../controller/categorieController.php';
-require_once __DIR__ . '/../controller/articleController.php';
+//require_once 'allModel.php';
+require_once '../controller/categorieController.php';
+require_once '../controller/articleController.php';

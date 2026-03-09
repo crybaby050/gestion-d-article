@@ -1,6 +1,7 @@
 <?php
-    require_once __DIR__ . '/../other/allController.php';
     require_once __DIR__ . '/../other/header.php';
+    //require_once '/../other/allController.php';
+    require_once "../controller/categorieController.php";
 ?>
     <!-- Contenu principal -->
     <main class="max-w-7xl mx-auto px-4 py-8">
@@ -9,7 +10,7 @@
                 <h2 class="text-2xl font-bold text-gray-800">
                     Articles de la catégorie : Informatique
                 </h2>
-                <a href="categories.php" class="text-gray-600 hover:text-gray-900">
+                <a href="categorie.php" class="text-gray-600 hover:text-gray-900">
                     ← Retour aux catégories
                 </a>
             </div>

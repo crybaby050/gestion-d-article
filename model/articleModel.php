@@ -1,7 +1,13 @@
 <?php
 
+require_once __DIR__ . "/../data/config.php";
+
 function getAllArticles() {
     return $_SESSION['articles'];
+}
+
+function getAllCategories() {
+    return $_SESSION['categories'];
 }
 
 function getArticleById($id) {

@@ -1,6 +1,8 @@
 <?php
+require_once __DIR__ . "/../model/articleModel.php";
 
 $articles = getAllArticles();
+$categories = getAllCategories();
 if (isset($_POST['ajouter'])) {
     
     $libelle = trim($_POST['libelle'] ?? '');

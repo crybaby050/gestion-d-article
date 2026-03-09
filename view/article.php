@@ -1,6 +1,6 @@
 <?php
-    require_once __DIR__ . '/../other/allController.php';
     require_once __DIR__ . '/../other/header.php';
+    require_once __DIR__ . "/../controller/articleController.php";
 ?>
     <!-- Contenu principal -->
     <main class="max-w-7xl mx-auto px-4 py-8">

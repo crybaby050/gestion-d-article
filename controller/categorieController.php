@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../model/categorieModel.php";
 
 $categories = getAllCategories();
 if (isset($_POST['ajout'])) {
