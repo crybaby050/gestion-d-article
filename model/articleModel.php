@@ -54,6 +54,14 @@ function getNameCategorieById($id){
     }
 }
 
+function getIdByNameCategorie($cate){
+    foreach($_SESSION['categories'] as $categorie){
+        if($cate == $categorie['libelle']){
+            return $categorie['id'];
+        }
+    }
+}
+
 /*
 function increaseArticleQuantity($id, $quantiteAjoutee) {
     foreach ($_SESSION['articles'] as &$article) {
