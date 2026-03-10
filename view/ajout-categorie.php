@@ -1,7 +1,5 @@
 <?php
-    //require_once __DIR__ . '/../other/allController.php';
-    require_once __DIR__ . "/../controller/articleController.php";
-
+    require_once __DIR__ . "/../controller/categorieController.php";
 ?>
     <!-- Contenu principal -->
     <main class="max-w-3xl mx-auto px-4 py-8">

@@ -35,12 +35,6 @@ function newCategorieId() {
 }
 
 function addCategorie($libelle, $description) {
-    // Vérifier si la catégorie existe déjà
-    $existe = getCategorieByLibelle($libelle);
-    if ($existe) {
-        return false; // Catégorie déjà existante
-    }
-    
     $nouvelleCategorie = [
         'id' => newCategorieId(),
         'libelle' => $libelle,
