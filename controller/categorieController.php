@@ -20,7 +20,7 @@ if (isset($_POST['ajout'])) {
     if (empty($errors)) {
         // Ajouter la catégorie
         $resultat = addCategorie($libelle, $description);
-        header('Location: categorie.php');
+        header('Location:'.WEBROOT.'?page=categorie');
         exit;
     }
 }

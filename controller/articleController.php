@@ -42,18 +42,7 @@ if (isset($_POST['ajouter'])) {
         addArticle($libelle, $prix, $quantite, $categorie_id);
         
         // Redirection vers la liste
-        header('Location: article.php?success=1');
-        exit;
-    } else {
-        // En cas d'erreur, rediriger avec les erreurs
-        $query = http_build_query([
-            'errors' => json_encode($errors),
-            'libelle' => $libelle,
-            'prix' => $prix,
-            'quantite' => $quantite,
-            'categorie_id' => $categorie_id
-        ]);
-        header('Location: ajout-article.php?' . $query);
+        header('Location:'.WEBROOT);
         exit;
     }
 }

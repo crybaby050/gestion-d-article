@@ -12,7 +12,7 @@
                     <button id="toggleView" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition">
                         Vue cartes
                     </button>
-                    <a href="ajout-article.php" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                    <a href="<?=WEBROOT?>?page=ajout-article" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                         + Ajouter un article
                     </a>
                 </div>

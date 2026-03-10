@@ -1,5 +1,4 @@
 <?php
-    require_once __DIR__ . '/../other/header.php';
     //require_once __DIR__ . '/../other/allController.php';
     require_once __DIR__ . "/../controller/articleController.php";
 
@@ -29,7 +28,7 @@
                     <button type="submit" name="ajout" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
                         Ajouter
                     </button>
-                    <a href="categories.php" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition text-center">
+                    <a href="<?=WEBROOT?>?page=categorie" class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition text-center">
                         Annuler
                     </a>
                 </div>

@@ -10,7 +10,7 @@
                 <h2 class="text-2xl font-bold text-gray-800">
                     Articles de la catégorie : Informatique
                 </h2>
-                <a href="categorie.php" class="text-gray-600 hover:text-gray-900">
+                <a href="<?=WEBROOT?>?page=categorie" class="text-gray-600 hover:text-gray-900">
                     ← Retour aux catégories
                 </a>
             </div>
