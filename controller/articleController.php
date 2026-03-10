@@ -8,7 +8,7 @@ if (isset($_POST['ajouter'])) {
     $libelle = trim($_POST['libelle'] ?? '');
     $prix = floatval($_POST['prix'] ?? 0);
     $quantite = intval($_POST['quantite'] ?? 0);
-    $categorie_id = intval($_POST['categorie_id'] ?? 0); // ← Directement l'ID
+    $categorie_id = intval($_POST['categorie_id'] ?? 0);
     
     $errors = [];
     
@@ -26,23 +26,17 @@ if (isset($_POST['ajouter'])) {
         $errors['quantite'] = 'La quantité ne peut pas être négative';
     }
     
-    if ($categorie_id <= 0) { // ← Vérification directe de l'ID
+    if ($categorie_id <= 0) {
         $errors['categorie_id'] = 'Veuillez sélectionner une catégorie';
-    } else {
-        // Vérifier que la catégorie existe vraiment
-        $categorie = getCategorieById($categorie_id);
-        if (!$categorie) {
-            $errors['categorie_id'] = 'Catégorie invalide';
-        }
     }
     
     // S'il n'y a pas d'erreurs
     if (empty($errors)) {
-        // Ajouter l'article (newId() doit être DANS addArticle)
+        // Ajouter l'article
         addArticle($libelle, $prix, $quantite, $categorie_id);
         
-        // Redirection vers la liste
-        header('Location:'.WEBROOT);
+        // Redirection vers la liste des articles avec le paramètre page
+        header('Location: ' . WEBROOT . '?page=article');
         exit;
     }
 }
