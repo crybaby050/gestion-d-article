@@ -26,7 +26,7 @@ if (isset($_POST['ajout'])) {
     }
 }
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && isset($_GET['page']) && $_GET['page'] == 'articles-categorie') {
     $id = intval($_GET['id']);
     $articles_cat = getArticlesByCategorie($id);
 }

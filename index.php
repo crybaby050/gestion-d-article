@@ -14,6 +14,8 @@ if($page == 'article'){
     require_once("view/categorie.php");
 }elseif($page == 'ajout-categorie'){
     require_once("view/ajout-categorie.php");
+}elseif($page == 'articles-categorie'){
+    require_once("view/articles-categorie.php");
 }else{
     echo "Error 404";
 }

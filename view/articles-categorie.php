@@ -1,7 +1,28 @@
 <?php
-    require_once __DIR__ . '/../other/header.php';
-    //require_once '/../other/allController.php';
-    require_once "../controller/categorieController.php";
+    require_once __DIR__ . "/../controller/categorieController.php";
+    
+    // Vérifier si l'ID est fourni
+    if(!isset($_GET['id']) || empty($_GET['id'])) {
+        header('Location: ' . WEBROOT . '?page=categorie');
+        exit;
+    }
+    
+    $categorie_id = intval($_GET['id']);
+    
+    // Récupérer les informations de la catégorie
+    $categorie = getCategorieById($categorie_id);
+    
+    // Vérifier si la catégorie existe
+    if(!$categorie) {
+        echo "Catégorie non trouvée";
+        exit;
+    }
+    
+    // $articles_cat est déjà défini dans le contrôleur si la condition est remplie
+    // Mais par sécurité, on peut le redéfinir
+    if(!isset($articles_cat)) {
+        $articles_cat = getArticlesByCategorie($categorie_id);
+    }
 ?>
     <!-- Contenu principal -->
     <main class="max-w-7xl mx-auto px-4 py-8">
